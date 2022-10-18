@@ -45,6 +45,14 @@ public class BinaryTree {
                 System.out.println(current.value + "");
             }
         }
+        static void printPreOrder(BinaryTreeNode node){
+            if(node == null){
+                return;
+            }
+            System.out.println(node.value);
+            printPreOrder(node.left_child);
+            printPreOrder(node.right_child);
+        }
 
         public static void main(String[] args) {
 
@@ -64,6 +72,7 @@ public class BinaryTree {
 
             //Kall funskjonen vår
             printLevelOrder(root);
+            printPreOrder(root);
         }
     }
 }
