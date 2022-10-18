@@ -6,21 +6,24 @@ public class BinaryTree {
         BinaryTreeNode left_child;
         BinaryTreeNode right_child;
 
+        //kontruktør
         BinaryTreeNode(char value){
             this.value = value;
             this.left_child = null;
             this.right_child = null;
         }
-
+        //det venstre barnet
         BinaryTreeNode addLeftChild(char value){
             this.left_child = new BinaryTreeNode(value);
             return this.left_child;
         }
 
+        //det høyre barnet
         BinaryTreeNode addRightChild(char value){
             this.right_child = new BinaryTreeNode(value);
             return this.right_child;
         }
+
         static void printLevelOrder(BinaryTreeNode root){
             ArrayDeque<BinaryTreeNode> queue = new ArrayDeque<BinaryTreeNode>();
 
@@ -38,6 +41,7 @@ public class BinaryTree {
                 if (current.right_child != null) {
                     queue.addLast(current.right_child);
                 }
+                //skriv ut verdier
                 System.out.println(current.value + "");
             }
         }
